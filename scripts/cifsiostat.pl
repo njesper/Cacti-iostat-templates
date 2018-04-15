@@ -91,14 +91,14 @@ sub process {
     my $header_seen = 0;
 
     while (<IOSTAT>) {
-        if (/^[D|d]evice/) {
+        if (/^[F|f]ilesystem/) {
             $header_seen++;
             next;
         }
         next if ( $header_seen < 2 );
         next if (/^$/);
         
-        /^([a-z0-9\-\/]+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)/;
+        /^([a-zA-Z0-9\-\/]+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)\s+(\d+[\.,]\d+)/;
 
         $stats{"$base_oid.1.$devices"}  = $devices;	# index
         $stats{"$base_oid.2.$devices"}  = $1;		# Filesystem
