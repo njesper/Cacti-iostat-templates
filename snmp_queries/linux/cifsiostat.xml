@@ -1,0 +1,74 @@
+<interface>
+        <name>Get cifsIOSTAT Devices</name>
+        <description>Queries a host for a list of monitorable devices from cifsiostat</description>
+        <oid_index>.1.3.6.1.3.2</oid_index>
+        <index_order>ioDescr:ioIndex</index_order>
+        <index_order_type>numeric</index_order_type>
+        <index_title_format>|chosen_order_field|</index_title_format>
+
+        <fields>
+                <ioIndex>
+                        <name>Index</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.3.2.1</oid>
+                </ioIndex>
+                <ioDescr>
+                        <name>Description</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>input</direction>
+                        <oid>.1.3.6.1.3.2.2</oid>
+                </ioDescr>
+                <ioRkbs>
+                        <name>Average Read kBytes per Second</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.3.2.3</oid>
+                </ioRkbs>
+                <ioWkbs>
+                        <name>Average Write kBytes per Second</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.3.2.4</oid>
+                </ioWkbs>
+                <ioRopss>
+                        <name>Read Ops per Second</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.3.2.5</oid>
+                </ioRopss>
+                <ioWopss>
+                        <name>Write Ops per Second</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.3.2.6</oid>
+                </ioWopss>
+                <ioFos>
+                        <name>Open Files per Second</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.3.2.7</oid>
+                </ioFos>
+                <ioFcs>
+                        <name>Closed Files per Second</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.3.2.8</oid>
+                </ioFcs>
+                <ioFds>
+                        <name>Deleted Files per Second</name>
+                        <method>walk</method>
+                        <source>value</source>
+                        <direction>output</direction>
+                        <oid>.1.3.6.1.3.2.9</oid>
+                </ioFds>
+        </fields>
+</interface>
